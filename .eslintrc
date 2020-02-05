@@ -1,0 +1,51 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "standard-with-typescript"
+    ],
+    "parserOptions":  {
+        "project": "./tsconfig.json",
+        "ecmaVersion":  2018,  // Allows for the parsing of modern ECMAScript features
+        "sourceType":  "module"  // Allows for the use of imports
+    },
+    "plugins": ["filenames"],
+    "settings": {
+        "polyfills": ["promises"]
+    },
+    "rules": {
+        "quotes": [1, "double"],
+        "new-cap": [2, {
+            "capIsNewExceptions": ["Q", "QQ"]
+        }],
+        "no-underscore-dangle": [0],
+        "no-multi-spaces": [0],
+        "no-spaced-func": [0],
+        "no-multiple-empty-lines": [2],
+        "no-trailing-spaces": [2],
+        "no-console": 1,
+        "no-unused-vars": ["error", { "varsIgnorePattern": "h" }],
+        "max-statements": [2, 23],
+        "complexity": [2, 10],
+
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "semi": ["error", "always"],
+
+        "filenames/match-regex": [2, "^[a-z0-9_.]+$", true],
+        "filenames/match-exported": 2,
+
+        "@typescript-eslint/explicit-function-return-type": [0, { "allowExpressions": true }],
+        "@typescript-eslint/restrict-template-expressions": [1, { "allowNumber": true }],
+        "@typescript-eslint/strict-boolean-expressions": [0, { "allowNullable": true, "allowSafe": true, "ignoreRhs": true }],
+        "@typescript-eslint/no-floating-promises": [0],
+        "@typescript-eslint/quotes": 0,
+        "@typescript-eslint/indent": 0
+    },
+    "overrides": [
+        {
+            "files": ["*.ts"],
+            "rules": {
+                "quotes": [1, "double"]
+            }
+        }
+    ]
+}
